@@ -1,153 +1,582 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="generator" content="Hugo 0.88.1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href=""https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-	<link rel="stylesheet" href="css/custom.css">
-	<link rel="stylesheet" href="css/normalize.css">
-
-	<title>HSM-TSS Demo Page</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>HSM-TSS Demo Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .instruction {
+      font-style: italic;
+      color: #555;
+    }
+    audio {
+      width: 100%;
+    }
+  </style>
 </head>
+<body class="bg-light">
 
-<body data-new-gr-c-s-check-loaded="14.1091.0" data-gr-ext-installed="">
+<div class="container my-5">
+  <h1 class="text-center mb-5">HSM-TSS Demo</h1>
 
-<div class="container" >
-<header role="banner">
-</header>
-<main role="main">
-<article itemscope itemtype="https://schema.org/BlogPosting">
-    <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-        <div class="text-center">
-        <h1>HSM-TSS Demo</h1>
+  <!-- ===== Section 1: General Audio Separation ===== -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+      <h3 class="card-title text-center">General Audio Separation</h3>
 
+      <!-- Subsection 1: 3 Sets -->
+      <h5 class="text-muted mt-4 mb-2">3 Sets</h5>
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Extract: A man speaks with some clicks and then loud long scrapes."</p>
+        <p>Ours (remove): "Remove the sound of wind chime."</p>
+        <p>AudioSep: "A man speaks with some clicks and then loud long scrapes."</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/3setsval_test_20h_mix3.wav"></audio>
         </div>
-    
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/3setsval_test_20h_target3.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/3setsval_test_20h_target3.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/3setsval_test_20h_target3.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/3setsval_test_20h_target3.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Separate drip"</p>
+        <p>Ours (remove): "Remove: Someone is frying food and scraping it out of the pan and then throws the spatula in the pan."</p>
+        <p>AudioSep: "drip"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/3setsval_test_20h_mix12.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/3setsval_test_20h_target12.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/3setsval_test_20h_target12.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/3setsval_test_20h_target12.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/3setsval_test_20h_target12.wav"></audio>
+        </div>
+      </div>
+
+      <!-- Subsection 2: FSD50K -->
+      <h5 class="text-muted mt-5 mb-2">FSD50K</h5>
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Separate ratchet and pawl"</p>
+        <p>Ours (remove): "Drop the sound of computer keyboard"</p>
+        <p>AudioSep: "ratchet and pawl"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/fsd50k_test_10h_mix27.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/fsd50k_test_10h_target27.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/fsd50k_test_10h_target27.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/fsd50k_test_10h_target27.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/fsd50k_test_10h_target27.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Extract the sound of belly laugh,giggle"</p>
+        <p>Ours (remove): "Drop the sound of printer"</p>
+        <p>AudioSep: "belly laugh,giggle"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/fsd50k_test_10h_mix35.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/fsd50k_test_10h_target35.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/fsd50k_test_10h_target35.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/fsd50k_test_10h_target35.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/fsd50k_test_10h_target35.wav"></audio>
+        </div>
+      </div>
+
+        <!-- Subsection 3: AudioCaps -->
+      <h5 class="text-muted mt-5 mb-2">AudioCaps</h5>
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Separate: A tool motor is running while metal whirring, grinding and clattering occur, then the tool whirs to a stop."</p>
+        <p>Ours (remove): "Drop: People are laughing and chuckling."</p>
+        <p>AudioSep: "A tool motor is running while metal whirring, grinding and clattering occur, then the tool whirs to a stop"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/audiocaps_test_10h_mix2034.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/audiocaps_test_10h_target2034.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/audiocaps_test_10h_target2034.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/audiocaps_test_10h_target2034.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/audiocaps_test_10h_target2034.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Extract: Typing on a computer keyboard"</p>
+        <p>Ours (remove): "Drop: Vehicle motor running"</p>
+        <p>AudioSep: "Typing on a computer keyboard"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/audiocaps_test_10h_mix290.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/audiocaps_test_10h_target290.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/audiocaps_test_10h_target290.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/audiocaps_test_10h_target290.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/audiocaps_test_10h_target290.wav"></audio>
+        </div>
+      </div>
+
+        <!-- Subsection 4: Clotho -->
+      <h5 class="text-muted mt-5 mb-2">Clotho</h5>
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Separate: Banging on a trash can is making a drum sound."</p>
+        <p>Ours (remove): "Remove: A shrill note dings before becoming lower in tone as machine clicks play."</p>
+        <p>AudioSep: "Banging on a trash can is making a drum sound."</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/clotho_test_10h_mix111.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/clotho_test_10h_target111.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/clotho_test_10h_target111.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/clotho_test_10h_target111.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/clotho_test_10h_target111.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Extract: Quick scratchy writing on a chalkboard is occurring."</p>
+        <p>Ours (remove): "Remove: The engine of a lawnmower runs steadily to cut the grass."</p>
+        <p>AudioSep: "Quick scratchy writing on a chalkboard is occurring."</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/clotho_test_10h_mix2356.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/clotho_test_10h_target2356.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/clotho_test_10h_target2356.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/clotho_test_10h_target2356.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/clotho_test_10h_target2356.wav"></audio>
+        </div>
+      </div>
+
     </div>
-    
-    
-<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-	<h2 id="General audio separation" style="text-align: center;">General audio separation</h2>
-		<div class="table-responsive pt-3">
-			<table class="table table-hover pt-2">
-			<thead>
-			<tr>
-            <th style="text-align: center">Mixture</th>
-			<th style="text-align: center">GT</th>
-			<th style="text-align: center">Ours</th>
-			<th style="text-align: center">Ours_single</th>
-			<th style="text-align: center">AudioSep</th>
-			</tr>
-			</thead>
-			<tbody>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/gt/5683-32866-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/encodec/5683-32866-0018.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/tfcodec/5683-32866-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg8/5683-32866-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg1/5683-32866-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			</tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/gt/8455-210777-0034.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/encodec/8455-210777-0034.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/tfcodec/8455-210777-0034.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg8/8455-210777-0034.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg1/8455-210777-0034.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/gt/4507-16021-0045.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/encodec/4507-16021-0045.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/tfcodec/4507-16021-0045.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg8/4507-16021-0045.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg1/4507-16021-0045.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/gt/1320-122617-0037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/encodec/1320-122617-0037.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/tfcodec/1320-122617-0037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg8/1320-122617-0037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg1/1320-122617-0037.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/gt/2830-3980-0062.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/encodec/2830-3980-0062.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/tfcodec/2830-3980-0062.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg8/2830-3980-0062.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg1/2830-3980-0062.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/gt/4992-41797-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/encodec/4992-41797-0018.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/tfcodec/4992-41797-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg8/4992-41797-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/english/speechtokenizer_stg1/4992-41797-0018.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-			</tbody>
+  </div>
 
-			</table>
-		</div>
+  <!-- ===== Section 2: Music Separation ===== -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+      <h3 class="card-title text-center">Music Separation (Zero-shot from MUSIC dataset)</h3>
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Extract the sound of flute"</p>
+        <p>Ours (remove): "Drop violin"</p>
+        <p>AudioSep: "flute"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/music_test_mix5.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/music_test_target5.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/music_test_target5.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/music_test_target5.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/music_test_target5.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Separate trumpet"</p>
+        <p>Ours (remove): "Drop accordion"</p>
+        <p>AudioSep: "trumpet"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/music_test_mix26.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/music_test_target26.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/music_test_target26.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/music_test_target26.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/music_test_target26.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Extract the sound of tuba"</p>
+        <p>Ours (remove): "Remove cello"</p>
+        <p>AudioSep: "tuba"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/music_test_mix31.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/music_test_target31.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/music_test_target31.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/music_test_target31.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/music_test_target31.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Ours (extract): "Extract trumpet"</p>
+        <p>Ours (remove): "Remove saxophone"</p>
+        <p>AudioSep: "trumpet"</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/music_test_mix69.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/music_test_target69.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (extract)</p>
+          <audio controls><source src="demos/ours/extract/music_test_target69.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="demos/ours/remove/music_test_target69.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AudioSep</p>
+          <audio controls><source src="demos/audiosep/music_test_target69.wav"></audio>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== Section 3: Flexible instruction for audio source separation ===== -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+      <h3 class="card-title text-center">Flexible instructions for audio source separation</h3>
+      <div class="instruction text-center mb-3">
+        <p>Arbitrary Instruction: "I need to keep the loud train horn."</p>
+        <p>LLM Processed: task type("extract") + description("loud train horn")</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/audiocaps_test_10h_mix2979.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/audiocaps_test_10h_target2979.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours</p>
+          <audio controls><source src="demos/ours/extract/audiocaps_test_10h_target2979.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-center mb-3">
+        <p>Arbitrary Instruction: "Please remove the sound of squirrels, frogs and various birds close to a stream."</p>
+        <p>LLM Processed: task type("remove") + description("squirrels, frogs and various birds close to a stream")</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/clotho_test_10h_mix814.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/clotho_test_10h_target814.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours</p>
+          <audio controls><source src="demos/ours/extract/clotho_test_10h_target814.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-center mb-3">
+        <p>Arbitrary Instruction: "I can hear the sound of rain and thunder from the mixture. Help me isolate the sound."</p>
+        <p>LLM Processed: task type("extract") + description("rain, thunder")</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/fsd50k_test_10h_mix42.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/fsd50k_test_10h_target42.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours</p>
+          <audio controls><source src="demos/ours/extract/fsd50k_test_10h_target42.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-center mb-3">
+        <p>Arbitrary Instruction: "Only keep the woman speech without the music sound."</p>
+        <p>LLM Processed: task type("extract") + description("woman speech")</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="demos/mixture/3setsval_test_20h_mix48.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">GT</p>
+          <audio controls><source src="demos/gt/3setsval_test_20h_target48.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours</p>
+          <audio controls><source src="demos/ours/extract/3setsval_test_20h_target48.wav"></audio>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== Section 4: Performance on AUDIT demos ===== -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+      <h3 class="card-title text-center">Performance on AUDIT demos</h3>
+      <div class="instruction text-start mb-3">
+        <p>Drop the sound of a duck quacking in water</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="AUDIT_demo/source/duck.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="AUDIT_demo/Ours/finetune_newdata4500_14000_stage2_198/duck.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AUDIT</p>
+          <audio controls><source src="AUDIT_demo/AUDIT_out/duck.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Drop the sound of dishes and pots and pans in the middle</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="AUDIT_demo/source/dishes.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="AUDIT_demo/Ours/finetune_newdata4500_14000_stage2_198/dishes.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AUDIT</p>
+          <audio controls><source src="AUDIT_demo/AUDIT_out/dishes.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Drop: pouring water</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="AUDIT_demo/source/water.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="AUDIT_demo/Ours/finetune_newdata4500_14000_stage2_198/water.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AUDIT</p>
+          <audio controls><source src="AUDIT_demo/AUDIT_out/water.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Drop people cheering</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="AUDIT_demo/source/cheer.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="AUDIT_demo/Ours/finetune_newdata4500_14000_stage2_198/cheer.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AUDIT</p>
+          <audio controls><source src="AUDIT_demo/AUDIT_out/cheer.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Drop a short firework explosion in the end</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="AUDIT_demo/source/firework.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="AUDIT_demo/Ours/finetune_newdata4500_14000_stage2_198/firework.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AUDIT</p>
+          <audio controls><source src="AUDIT_demo/AUDIT_out/firework.wav"></audio>
+        </div>
+      </div>
+
+      <div class="instruction text-start mb-3">
+        <p>Drop the sound of a woman talking</p>
+      </div>
+      <div class="row text-center">
+        <div class="col-md">
+          <p class="fw-semibold">Mixture</p>
+          <audio controls><source src="AUDIT_demo/source/female.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">Ours (remove)</p>
+          <audio controls><source src="AUDIT_demo/Ours/finetune_newdata4500_14000_stage2_198/female.wav"></audio>
+        </div>
+        <div class="col-md">
+          <p class="fw-semibold">AUDIT</p>
+          <audio controls><source src="AUDIT_demo/AUDIT_out/female.wav"></audio>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
-
-
-
-<div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded">
-	<h2 id="Music separation (zero-shot)" style="text-align: center;">Music separation (zero-shot)</h2>
-		<div class="table-responsive pt-3">
-			<table class="table table-hover pt-2">
-			<thead>
-			<tr>
-            <th style="text-align: center">Mixture</th>
-            <th style="text-align: center">GT</th>
-            <th style="text-align: center">Ours</th>
-            <th style="text-align: center">Ours_single</th>
-            <th style="text-align: center">AudioSep</th>
-			</tr>
-			</thead>
-			<tbody>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/gt/6306_4006_000056.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/encodec/6306_4006_000056.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/tfcodec/6306_4006_000056.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg8/6306_4006_000056.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			<td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg1/6306_4006_000056.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-			</tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/gt/12249_11991_000008.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/encodec/12249_11991_000008.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/tfcodec/12249_11991_000008.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg8/12249_11991_000008.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg1/12249_11991_000008.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/gt/12525_11991_000075.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/encodec/12525_11991_000075.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/tfcodec/12525_11991_000075.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg8/12525_11991_000075.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg1/12525_11991_000075.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/gt/6306_4006_000064.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/encodec/6306_4006_000064.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/tfcodec/6306_4006_000064.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg8/6306_4006_000064.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg1/6306_4006_000064.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/gt/5870_4006_000024.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/encodec/5870_4006_000024.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/tfcodec/5870_4006_000024.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg8/5870_4006_000024.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg1/5870_4006_000024.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-            <tr><td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/gt/3503_2162_000068.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/encodec/3503_2162_000068.flac" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/tfcodec/3503_2162_000068.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg8/3503_2162_000068.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-                <td style="text-align: center"><audio controls="controls" style="width: 140px;"><source src="audio/spanish/speechtokenzier_stg1/3503_2162_000068.wav" autoplay/>Your browser does not support the audio element.</audio></td>
-            </tr>
-			</tbody>
-
-			</table>
-		</div>
-</div>
-
-</article>
-</main>
-</div>
-
 </body>
 </html>

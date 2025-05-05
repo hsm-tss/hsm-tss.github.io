@@ -1,0 +1,7 @@
+audio_extract,text_extract,audio_remove,text_remove,audio_mixed,mixed_len,text_extract_captions
+none,none,none,Drop the sound of a duck quacking in water,duck.wav,10.0,none
+none,none,none,Drop the sound of dishes and pots and pans in the middle,dishes.wav,10.0,none
+none,none,none,Drop: pouring water,water.wav,10.0,none
+none,none,none,Drop people cheering,cheer.wav,10.0,none
+none,none,none,Drop a short firework explosion in the end,firework.wav,10.0,none
+none,none,none,Drop the sound of a woman talking,female.wav,10.0,none
